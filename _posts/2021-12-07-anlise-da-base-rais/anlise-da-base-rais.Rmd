@@ -1,21 +1,64 @@
 ---
 title: "Análise da base RAIS"
 description: |
-  Essa análise.
+  Análise de salários na base RAIS.
 author:
   - name: Jackson Paiva Gustavson
-    url: https://example.com/norajones
 date: 2021-12-07
 output:
   distill::distill_article:
     self_contained: false
 ---
 
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Primeiro post
+Nesse relatório estamos interessados em responder a pergunta:
+
+"Quanto ganha um cientista de dados?"
+
+Para a realização da análise, foi utilizado o [datalake da iniciativa Base dos Dados] (https://basedos.org).
+
+As bibliotecas utilizadas foram:
+
+```{r message=FALSE, warning=FALSE}
+library(bigrquery)
+library(dplyr)
+
+```
+
+Carregando o arquivo CSV com link...
+
+```{r}
+tabela_normal <- read.csv("https://raw.githubusercontent.com/curso-r/mais-r4ds-1/master/dados/imdb.csv")
+
+#head(tabela_normal, 5)
+
+#
 
 
+
+```
+
+Abaixo está o código que carrega as primeiras 5 linhas da tabela de microdados.
+
+```{r}
+conexao <- dbConnect(
+  bigquery(),
+  project = "basedosdados",
+  dataset = "br_me_rais",
+  billing = "rais-334500"
+)
+
+# o billing foi retirado do seguinte link, de acordo com o id do meu projeto 
+# https://console.cloud.google.com/bigquery?p=basedosdados&d=br_me_rais&t=microdados_vinculos&page=table&project=rais-334500
+```
+
+Vizualização das primeiras 5 linhas
+
+```{r}
+primeiras_cinco_linhas <- collect(head(select(tbl(conexao,"microdados_vinculos"),
+                                             1 everything()),5))
+
+```

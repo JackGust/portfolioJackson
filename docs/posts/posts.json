@@ -18,19 +18,19 @@
   },
   {
     "path": "posts/2021-12-07-anlise-da-base-rais/",
-    "title": "AnÃ¡lise da base RAIS",
-    "description": "Essa análise.",
+    "title": "Análise da base RAIS",
+    "description": "Essa análise teve como objetivo os salários na base RAIS.",
     "author": [
       {
         "name": "Jackson Paiva Gustavson",
-        "url": "https://example.com/norajones"
+        "url": {}
       }
     ],
     "date": "2021-12-07",
     "categories": [],
-    "contents": "\r\nPrimeiro post\r\n\r\n\r\n\r\n",
+    "contents": "\r\nPrimeiro post teste\r\n\r\n\r\n# teste\r\n1+1\r\n\r\n\r\n[1] 2\r\n\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2021-12-07T19:06:05-03:00",
+    "last_modified": "2021-12-07T20:06:11-03:00",
     "input_file": "anlise-da-base-rais.knit.md"
   }
 ]
