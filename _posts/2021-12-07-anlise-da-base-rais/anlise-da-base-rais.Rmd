@@ -37,7 +37,7 @@ tabela_normal <- read.csv("https://raw.githubusercontent.com/curso-r/main-r4ds-1
 
 Abaixo está o código que carrega as primeiras 5 linhas da tabela de microdados.
 
-```{r}
+```{r echo=TRUE}
 conexao <- dbConnect(
   bigquery(),
   project = "basedosdados",
@@ -51,7 +51,7 @@ conexao <- dbConnect(
 
 Vizualização das primeiras 5 linhas
 
-```{r}
+```{r echo=TRUE}
 primeiras_cinco_linhas <- collect(head(select(tbl(conexao,"microdados_vinculos"),
                                              everything()),5))
 
