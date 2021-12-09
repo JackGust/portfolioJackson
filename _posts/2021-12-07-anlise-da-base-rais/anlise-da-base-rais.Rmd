@@ -31,7 +31,7 @@ library(dplyr)
 Carregando o arquivo CSV com link...
 
 ```{r}
-tabela_normal <- read.csv("https://raw.githubusercontent.com/curso-r/mais-r4ds-1/master/dados/imdb.csv")
+tabela_normal <- read.csv("https://raw.githubusercontent.com/curso-r/main-r4ds-1/master/dados/imdb.csv")
 
 conexao <- dbConnect(
   bigquery(),
