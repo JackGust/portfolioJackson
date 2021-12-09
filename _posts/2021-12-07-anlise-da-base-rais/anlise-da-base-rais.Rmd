@@ -31,7 +31,8 @@ library(dplyr)
 Carregando o arquivo CSV com link...
 
 ```{r}
-tabela_normal <- read.csv("https://raw.githubusercontent.com/curso-r/main-r4ds-1/master/dados/imdb.csv")
+#teste
+#tabela_normal <- read.csv("https://raw.githubusercontent.com/curso-r/main-r4ds-1/master/dados/imdb.csv")
 
 ```
 
@@ -45,6 +46,8 @@ conexao <- dbConnect(
   billing = "raisprojeto-334600"
 )
 
+conexao
+
 # o billing foi retirado do seguinte link, de acordo com o id do meu projeto 
 # https://console.cloud.google.com/bigquery?p=basedosdados&d=br_me_rais&t=microdados_vinculos&page=table&project=rais-334500
 ```
@@ -54,5 +57,9 @@ Vizualização das primeiras 5 linhas
 ```{r echo=TRUE}
 primeiras_cinco_linhas <- collect(head(select(tbl(conexao,"microdados_vinculos"),
                                              everything()),5))
+
+primeiras_cinco_linhas
+
+
 
 ```
