@@ -33,21 +33,6 @@ Carregando o arquivo CSV com link...
 ```{r}
 tabela_normal <- read.csv("https://raw.githubusercontent.com/curso-r/main-r4ds-1/master/dados/imdb.csv")
 
-conexao <- dbConnect(
-  bigquery(),
-  project = "basedosdados",
-  dataset = "br_me_rais",
-  billing = "rais-334500"
-)
-
-# o billing foi retirado do seguinte link, de acordo com o id do meu projeto 
-# https://console.cloud.google.com/bigquery?p=basedosdados&d=br_me_rais&t=microdados_vinculos&page=table&project=rais-334500
-
-
-primeiras_cinco_linhas <- collect(head(select(tbl(conexao,"microdados_vinculos"),
-                                             everything()),5))
-
-
 ```
 
 Abaixo está o código que carrega as primeiras 5 linhas da tabela de microdados.
@@ -57,7 +42,7 @@ conexao <- dbConnect(
   bigquery(),
   project = "basedosdados",
   dataset = "br_me_rais",
-  billing = "rais-334500"
+  billing = "raisprojeto-334600"
 )
 
 # o billing foi retirado do seguinte link, de acordo com o id do meu projeto 
